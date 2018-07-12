@@ -116,6 +116,7 @@ import '../stories/FullTextView.story.js'; //12.4 FullTextView
 import '../stories/Tag.story.js'; // 12.5 Tag
 import '../stories/Highlighter.story.js'; // Highlighter
 import '../stories/FormField.story.js'; // FormField
+import '../stories/Layout';
 
 // 13. Work in progress
 import '../stories/Table'; // 13.1 Table Card

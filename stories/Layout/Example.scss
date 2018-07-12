@@ -1,0 +1,9 @@
+@import '../../src/common.scss';
+
+.example-container {
+  background: $D70;
+  padding: 30px 48px;
+
+  min-width: 966px;
+  max-width: 1254px;
+}
