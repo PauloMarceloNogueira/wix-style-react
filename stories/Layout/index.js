@@ -1,6 +1,8 @@
 import * as React from 'react';
 import {storiesOf} from '@storybook/react';
 import CodeExample from 'wix-storybook-utils/CodeExample';
+import Markdown from 'wix-storybook-utils/Markdown';
+import Readme from '../../src/Layout/README.md';
 
 import RestaurantsMenus from './samples/RestaurantsMenus';
 import RestaurantsMenusRaw from '!raw-loader!./samples/RestaurantsMenus';
@@ -14,7 +16,12 @@ import RestaurantsStartersRaw from '!raw-loader!./samples/RestaurantsStarters';
 import StoresProductInfo from './samples/StoresProductInfo';
 import StoresProductInfoRaw from '!raw-loader!./samples/StoresProductInfo';
 
-storiesOf('2. Layout/New Layout/Samples', module)
+storiesOf('2. Layout/New Layout', module)
+  .add('Readme', () => (
+    <Markdown source={Readme}/>
+ ));
+
+storiesOf('2. Layout/New Layout/Examples', module)
   .add('Restaurants/Menus', () => (
     <CodeExample title="Restaurants - Menus" code={RestaurantsMenusRaw}>
       <RestaurantsMenus/>
