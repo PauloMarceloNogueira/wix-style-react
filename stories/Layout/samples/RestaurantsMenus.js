@@ -6,16 +6,16 @@ import styles from '../Example.scss';
 export default () => (
   <div data-hook="restaurants-menus" className={styles.exampleContainer}>
     <Layout>
-      <Cell span={4}>{foodCell()}</Cell>
-      <Cell span={4}>{foodCell()}</Cell>
-      <Cell span={4}>{foodCell()}</Cell>
-      <Cell span={4}>{foodCell()}</Cell>
-      <Cell span={4}>{foodCell()}</Cell>
+      <Cell span={4}>{food()}</Cell>
+      <Cell span={4}>{food()}</Cell>
+      <Cell span={4}>{food()}</Cell>
+      <Cell span={4}>{food()}</Cell>
+      <Cell span={4}>{food()}</Cell>
     </Layout>
   </div>
 );
 
-function foodCell() {
+function food() {
   return (
     <Card>
       <Card.Header withoutDivider title="Food Cell"/>

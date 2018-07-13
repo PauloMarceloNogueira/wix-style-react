@@ -39,12 +39,14 @@ class Cell extends WixComponent {
       gridColumn: `span ${this.props.span}`
     };
 
-    const columnClasses = classNames(
-      styles.item
-    );
+    const columnClasses = classNames(styles.cell);
 
     return (
-      <div style={inlineStyle} className={columnClasses} data-hook={this.props.dataHook}>
+      <div
+        style={inlineStyle}
+        className={columnClasses}
+        data-hook={this.props.dataHook}
+        >
         {this.props.children}
       </div>
     );

@@ -15,12 +15,12 @@ export default () => (
             title="Sections in Menu"
             />
           <Card.Content>
-            <Layout gap="20px">
-              <Cell span={4}><FoodCell title="Stuffed Rolls"/></Cell>
-              <Cell span={4}><FoodCell title="Tuna and Bread"/></Cell>
-              <Cell span={4}><FoodCell title="Fancy Shrimps"/></Cell>
-              <Cell span={4}><FoodCell title="Samosas"/></Cell>
-              <Cell span={4}><FoodCell title="Cheese and Mint"/></Cell>
+            <Layout gap="20">
+              <Cell span={4}><FoodItem title="Stuffed Rolls"/></Cell>
+              <Cell span={4}><FoodItem title="Tuna and Bread"/></Cell>
+              <Cell span={4}><FoodItem title="Fancy Shrimps"/></Cell>
+              <Cell span={4}><FoodItem title="Samosas"/></Cell>
+              <Cell span={4}><FoodItem title="Cheese and Mint"/></Cell>
             </Layout>
           </Card.Content>
         </Card>
@@ -39,7 +39,7 @@ export default () => (
   </div>
 );
 
-function FoodCell({title}) {
+function FoodItem({title}) {
   return (
     <div
       style={{
@@ -54,7 +54,7 @@ function FoodCell({title}) {
   );
 }
 
-FoodCell.propTypes = {
+FoodItem.propTypes = {
   title: PropTypes.string
 };
 
