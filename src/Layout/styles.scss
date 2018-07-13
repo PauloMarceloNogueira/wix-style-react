@@ -1,8 +1,19 @@
 .container {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[12];
-      grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   grid-gap: 30px;
 }
 
+// the following is a fallback for IE11,
+// which lacks support for css grid
+@media all and (-ms-high-contrast:none) {
+  .container {
+    display: -ms-flexbox;
+    -ms-flex-wrap: wrap;
+    -ms-flex-dirextion: row-reverse;
+  }
+  .cell {
+    margin: 10px 10px 0 10px;
+    flex: 1 0 auto;
+  }
+}
