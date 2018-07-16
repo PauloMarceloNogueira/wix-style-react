@@ -8,7 +8,7 @@ export default () => (
   <div data-hook="restaurants-menus" className={styles.exampleContainer}>
     <Layout>
       <Cell span={8}>
-        <Section title="Streched Card" strech={true}/>
+        <Section title="Streched Card" stretch/>
       </Cell>
       <Cell span={4}>
         <Layout>
@@ -24,9 +24,9 @@ export default () => (
   </div>
 );
 
-function Section({title, height, strech}) {
+function Section({title, height, stretch}) {
   return (
-    <Card stretchVertically={strech}>
+    <Card stretchVertically={stretch}>
       <Card.Header
         withoutDivider
         title={title}
@@ -40,5 +40,6 @@ function Section({title, height, strech}) {
 
 Section.propTypes = {
   title: PropTypes.string,
-  height: PropTypes.string
+  height: PropTypes.string,
+  stretch: PropTypes.bool
 };
