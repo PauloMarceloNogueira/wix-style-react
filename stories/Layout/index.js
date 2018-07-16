@@ -16,6 +16,9 @@ import RestaurantsStartersRaw from '!raw-loader!./samples/RestaurantsStarters';
 import StoresProductInfo from './samples/StoresProductInfo';
 import StoresProductInfoRaw from '!raw-loader!./samples/StoresProductInfo';
 
+import VerticallyStreched from './samples/VerticallyStreched';
+import VerticallyStrechedRaw from '!raw-loader!./samples/VerticallyStreched';
+
 storiesOf('2. Layout/New Layout', module)
   .add('Readme', () => (
     <Markdown source={Readme}/>
@@ -40,5 +43,10 @@ storiesOf('2. Layout/New Layout/Examples', module)
   .add('Stores/Product Info', () => (
     <CodeExample title="Stores - Product Info" code={StoresProductInfoRaw}>
       <StoresProductInfo/>
+    </CodeExample>
+ ))
+  .add('Vertically Streched', () => (
+    <CodeExample title="Vertically Streched" code={VerticallyStrechedRaw}>
+      <VerticallyStreched/>
     </CodeExample>
  ));

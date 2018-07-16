@@ -8,15 +8,15 @@ export default () => (
   <div data-hook="restaurants-menus" className={styles.exampleContainer}>
     <Layout>
       <Cell span={8}>
-        <Section title="Sections in Menu" height="450px"/>
+        <Section title="Streched Card" strech={true}/>
       </Cell>
       <Cell span={4}>
         <Layout>
           <Cell span={12}>
-            <Section title="Menu Info" height="200px"/>
+            <Section title="Some Panel" height="200px"/>
           </Cell>
           <Cell span={12}>
-            <Section title="Online Ordering" height="300px"/>
+            <Section title="Some Panel" height="300px"/>
           </Cell>
         </Layout>
       </Cell>
@@ -24,9 +24,9 @@ export default () => (
   </div>
 );
 
-function Section({title, height}) {
+function Section({title, height, strech}) {
   return (
-    <Card>
+    <Card stretchVertically={strech}>
       <Card.Header
         withoutDivider
         title={title}
