@@ -10,6 +10,10 @@ export default class Cell extends WixComponent {
     span: PropTypes.number
   };
 
+  static defaultProp = {
+    span: 1
+  };
+
   render() {
     const inlineStyle = {
       gridColumn: `span ${this.props.span}`

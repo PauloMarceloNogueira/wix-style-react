@@ -1,7 +1,6 @@
 .container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-gap: 30px;
 }
 
 // the following is a fallback for IE11,

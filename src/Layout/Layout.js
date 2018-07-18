@@ -9,12 +9,14 @@ export default class Layout extends WixComponent {
     gap: PropTypes.string
   };
 
-  render() {
-    const inlineStyle = {};
+  static defaultProps = {
+    gap: '30px'
+  };
 
-    if (this.props.gap) {
-      inlineStyle.gridGap = this.props.gap;
-    }
+  render() {
+    const inlineStyle = {
+      gridGap: this.props.gap
+    };
 
     return (
       <div style={inlineStyle} className={styles.container}>
