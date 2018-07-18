@@ -7,8 +7,7 @@ export default class Cell extends WixComponent {
 
   static propTypes = {
     children: PropTypes.node,
-    span: PropTypes.number,
-    dataHook: PropTypes.string
+    span: PropTypes.number
   };
 
   render() {
@@ -17,11 +16,7 @@ export default class Cell extends WixComponent {
     };
 
     return (
-      <div
-        style={inlineStyle}
-        className={styles.cell}
-        data-hook={this.props.dataHook}
-        >
+      <div style={inlineStyle} className={styles.cell}>
         {this.props.children}
       </div>
     );
