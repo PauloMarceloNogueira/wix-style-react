@@ -1,27 +1,24 @@
 import React from 'react';
-import styles from './styles.scss';
-import WixComponent from '../BaseComponents/WixComponent';
 import PropTypes from 'prop-types';
 
-export default class Layout extends WixComponent {
-  static propTypes = {
-    children: PropTypes.node,
-    gap: PropTypes.string
-  };
+import styles from './styles.scss';
 
-  static defaultProps = {
-    gap: '30px'
-  };
+const Layout = ({children, gap}) =>
+  <div
+    style={{
+      gridGap: gap
+    }}
+    className={styles.layout}
+    children={children}
+    />;
 
-  render() {
-    const inlineStyle = {
-      gridGap: this.props.gap
-    };
+Layout.propTypes = {
+  children: PropTypes.node,
+  gap: PropTypes.string
+};
 
-    return (
-      <div style={inlineStyle} className={styles.container}>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+Layout.defaultProps = {
+  gap: '30px'
+};
+
+export default Layout;

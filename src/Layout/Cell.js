@@ -1,28 +1,24 @@
 import React from 'react';
-import styles from './styles.scss';
-import WixComponent from '../BaseComponents/WixComponent';
 import PropTypes from 'prop-types';
 
-export default class Cell extends WixComponent {
+import styles from './styles.scss';
 
-  static propTypes = {
-    children: PropTypes.node,
-    span: PropTypes.number
-  };
+const Cell = ({span, children}) =>
+  <div
+    style={{
+      gridColumn: `span ${span}`
+    }}
+    className={styles.cell}
+    children={children}
+    />;
 
-  static defaultProp = {
-    span: 1
-  };
+Cell.propTypes = {
+  children: PropTypes.node,
+  span: PropTypes.number
+};
 
-  render() {
-    const inlineStyle = {
-      gridColumn: `span ${this.props.span}`
-    };
+Cell.defaultProp = {
+  span: 1
+};
 
-    return (
-      <div style={inlineStyle} className={styles.cell}>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+export default Cell;
