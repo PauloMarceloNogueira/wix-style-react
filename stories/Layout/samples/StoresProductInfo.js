@@ -1,14 +1,13 @@
 import React from 'react';
 
-import {Layout, Cell} from '../../../src/Layout';
+import {Layout, Cell} from 'wix-style-react/Layout';
+import Card from 'wix-style-react/Card';
+import Text from 'wix-style-react/Text';
 
 import styles from '../Example.scss';
 
-import Card from '../../../src/Card';
-import Text from '../../../src/Text';
-
 export default () => (
-  <div data-hook="restaurants-menus" className={styles.exampleContainer}>
+  <div className={styles.exampleContainer}>
     <Layout>
       <Cell span={8}>
         <Layout>
