@@ -2,6 +2,7 @@ import * as React from 'react';
 import {storiesOf} from '@storybook/react';
 import CodeExample from 'wix-storybook-utils/CodeExample';
 import Markdown from 'wix-storybook-utils/Markdown';
+
 import Readme from '../../src/Layout/README.md';
 
 import RestaurantsMenus from './samples/RestaurantsMenus';
@@ -19,34 +20,42 @@ import StoresProductInfoRaw from '!raw-loader!./samples/StoresProductInfo';
 import VerticallyStreched from './samples/VerticallyStreched';
 import VerticallyStrechedRaw from '!raw-loader!./samples/VerticallyStreched';
 
-storiesOf('2. Layout/New Layout', module)
+import HolyGrail from './samples/HolyGrail';
+import HolyGrailRaw from '!raw-loader!./samples/HolyGrail';
+
+storiesOf('Components/Layout', module)
   .add('Readme', () => (
     <Markdown source={Readme}/>
- ));
+  ));
 
-storiesOf('2. Layout/New Layout/Examples', module)
+storiesOf('Components/Layout/Examples', module)
   .add('Restaurants/Menus', () => (
     <CodeExample title="Restaurants - Menus" code={RestaurantsMenusRaw}>
       <RestaurantsMenus/>
     </CodeExample>
- ))
+  ))
   .add('Restaurants/Lunch', () => (
     <CodeExample title="Restaurants - Lunch" code={RestaurantsLunchRaw}>
       <RestaurantsLunch/>
     </CodeExample>
- ))
+  ))
   .add('Restaurants/Starters', () => (
     <CodeExample title="Restaurants - Starters" code={RestaurantsStartersRaw}>
       <RestaurantsStarters/>
     </CodeExample>
- ))
+  ))
   .add('Stores/Product Info', () => (
     <CodeExample title="Stores - Product Info" code={StoresProductInfoRaw}>
       <StoresProductInfo/>
     </CodeExample>
- ))
+  ))
   .add('Vertically Streched', () => (
     <CodeExample title="Vertically Streched" code={VerticallyStrechedRaw}>
       <VerticallyStreched/>
     </CodeExample>
- ));
+  ))
+  .add('Holy Grail Layout', () => (
+    <CodeExample title="Holy Grail Layout" code={HolyGrailRaw}>
+      <HolyGrail/>
+    </CodeExample>
+  ));

@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {Layout, Cell} from 'wix-style-react/Layout';
-import styles from '../Example.scss';
 import Card from 'wix-style-react/Card';
+
+import styles from '../Example.scss';
 
 export default () => (
   <div className={styles.exampleContainer}>
@@ -11,6 +12,7 @@ export default () => (
       <Cell span={8}>
         <Section title="Sections in Menu" height="450px"/>
       </Cell>
+
       <Cell span={4}>
         <Layout>
           <Cell span={12}>
