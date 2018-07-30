@@ -13,9 +13,16 @@ const Cell = ({span, children, vertical}) =>
     children={children}
     />;
 
+Cell.displayName = 'Cell';
+
 Cell.propTypes = {
+  /** any node to be rendered inside */
   children: PropTypes.node,
+
+  /** how many columns should this cell occupy. Can be any number from 1 to 12 inclusive */
   span: PropTypes.number,
+
+  /** whether to align children vertically to the middle */
   vertical: PropTypes.bool
 };
 

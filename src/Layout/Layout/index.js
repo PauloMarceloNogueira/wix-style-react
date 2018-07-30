@@ -12,8 +12,13 @@ const Layout = ({children, gap}) =>
     children={children}
     />;
 
+Layout.displayName = 'Layout';
+
 Layout.propTypes = {
+  /** one or more Cell components. Other nodes are accepted although not recommended */
   children: PropTypes.node,
+
+  /** distance between cells both vertically and horizontally */
   gap: PropTypes.string
 };
 

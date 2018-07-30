@@ -10,7 +10,7 @@ import Text from 'wix-style-react/Text';
 import Button from 'wix-style-react/Button';
 import RadioGroup from 'wix-style-react/RadioGroup';
 
-import styles from '../Example.scss';
+import styles from '../styles.scss';
 
 export default () => (
   <div className={styles.exampleContainer}>

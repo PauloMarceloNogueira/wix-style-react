@@ -124,6 +124,7 @@ import '../stories/Table/Toolbar/ToolbarStory.js'; // 13.2 TableToolbar
 
 // Components section, WIP and similar
 import '../stories/FormField.story.js';
+import '../stories/Layout/index.story.js';
 import '../stories/Layout';
 
 // TPA

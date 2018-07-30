@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {Layout, Cell} from 'wix-style-react/Layout';
 import Card from 'wix-style-react/Card';
 
-import styles from '../Example.scss';
+import styles from '../styles.scss';
 
 export default () => (
   <div className={styles.exampleContainer}>
