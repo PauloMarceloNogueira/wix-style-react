@@ -8,7 +8,7 @@ const Layout = ({children, gap}) =>
     style={{
       gridGap: gap
     }}
-    className={styles.layout}
+    className={styles.root}
     children={children}
     />;
 
