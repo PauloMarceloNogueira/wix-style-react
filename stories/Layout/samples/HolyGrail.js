@@ -1,34 +1,40 @@
 import React from 'react';
 
 import {Layout, Cell} from 'wix-style-react/Layout';
-import Heading from 'wix-style-react/Heading';
+import Text from 'wix-style-react/Text';
 
 export default () =>
-  <Layout>
-    <Cell span={12}>
-      {text('Header')}
-    </Cell>
+  <div>
+    {'<Layout>'}
+    <Layout>
+      <Cell>
+        {text('<Cell>Header</Cell>')}
+      </Cell>
 
-    <Cell span={12}>
-      <Layout>
-        <Cell span={1}>
-          {text('Left')}
-        </Cell>
-        <Cell span={10}>
-          {text('Middle')}
-        </Cell>
-        <Cell span={1}>
-          {text('Right')}
-        </Cell>
-      </Layout>
-    </Cell>
+      <Cell>
+        {'<Layout>'}
+        <Layout>
+          <Cell span={1}>
+            {text('<Cell span={1}><div style={width: 400}>Left width=400</div></Cell>', {width: 400})}
+          </Cell>
+          <Cell span={10}>
+            {text('<Cell span={10}>Middle fluid width</Cell>')}
+          </Cell>
+          <Cell span={1}>
+            {text('<Cell span={1}><div style={width: 300}>Right</div></Cell>', {width: 300})}
+          </Cell>
+        </Layout>
+        {'</Layout>'}
+      </Cell>
 
-    <Cell span={12}>
-      {text('Footer')}
-    </Cell>
-  </Layout>;
+      <Cell>
+        {text('<Cell>Footer</Cell>')}
+      </Cell>
+    </Layout>
+    {'</Layout>'}
+  </div>;
 
-function text(text) {
+function text(text, style) {
   return (
     <div
       style={{
@@ -36,10 +42,11 @@ function text(text) {
         alignItems: 'center',
         justifyContent: 'center',
         height: '100px',
-        background: '#F0F4F7'
+        background: '#F0F4F7',
+        ...style
       }}
       >
-      <Heading>{text}</Heading>
+      <Text>{text}</Text>
     </div>
   );
 }
