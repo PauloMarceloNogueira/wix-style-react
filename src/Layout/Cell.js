@@ -17,8 +17,8 @@ Cell.propTypes = {
   span: PropTypes.number
 };
 
-Cell.defaultProp = {
-  span: 1
+Cell.defaultProps = {
+  span: 12
 };
 
 export default Cell;
