@@ -5,23 +5,17 @@ import Markdown from 'wix-storybook-utils/Markdown';
 
 import Readme from '../../src/Layout/README.md';
 
-import RestaurantsMenus from './samples/RestaurantsMenus';
-import RestaurantsMenusRaw from '!raw-loader!./samples/RestaurantsMenus';
+import ListOfCards from './examples/ListOfCards';
+import ListOfCardsRaw from '!raw-loader!./examples/ListOfCards';
 
-import RestaurantsLunch from './samples/RestaurantsLunch';
-import RestaurantsLunchRaw from '!raw-loader!./samples/RestaurantsLunch';
+import MainAndSide from './examples/MainAndSide';
+import MainAndSideRaw from '!raw-loader!./examples/MainAndSide';
 
-import RestaurantsStarters from './samples/RestaurantsStarters';
-import RestaurantsStartersRaw from '!raw-loader!./samples/RestaurantsStarters';
+import Form from './examples/Form';
+import FormRaw from '!raw-loader!./examples/Form';
 
-import StoresProductInfo from './samples/StoresProductInfo';
-import StoresProductInfoRaw from '!raw-loader!./samples/StoresProductInfo';
-
-import VerticallyStreched from './samples/VerticallyStreched';
-import VerticallyStrechedRaw from '!raw-loader!./samples/VerticallyStreched';
-
-import HolyGrail from './samples/HolyGrail';
-import HolyGrailRaw from '!raw-loader!./samples/HolyGrail';
+import HolyGrail from './examples/HolyGrail';
+import HolyGrailRaw from '!raw-loader!./examples/HolyGrail';
 
 storiesOf('Components/Layout', module)
   .add('Readme', () => (
@@ -29,33 +23,26 @@ storiesOf('Components/Layout', module)
   ));
 
 storiesOf('Components/Layout/Examples', module)
-  .add('Restaurants/Menus', () => (
-    <CodeExample title="Restaurants - Menus" code={RestaurantsMenusRaw}>
-      <RestaurantsMenus/>
-    </CodeExample>
-  ))
-  .add('Restaurants/Lunch', () => (
-    <CodeExample title="Restaurants - Lunch" code={RestaurantsLunchRaw}>
-      <RestaurantsLunch/>
-    </CodeExample>
-  ))
-  .add('Restaurants/Starters', () => (
-    <CodeExample title="Restaurants - Starters" code={RestaurantsStartersRaw}>
-      <RestaurantsStarters/>
-    </CodeExample>
-  ))
-  .add('Stores/Product Info', () => (
-    <CodeExample title="Stores - Product Info" code={StoresProductInfoRaw}>
-      <StoresProductInfo/>
-    </CodeExample>
-  ))
-  .add('Vertically Streched', () => (
-    <CodeExample title="Vertically Streched" code={VerticallyStrechedRaw}>
-      <VerticallyStreched/>
-    </CodeExample>
-  ))
   .add('Holy Grail Layout', () => (
     <CodeExample title="Holy Grail Layout" code={HolyGrailRaw}>
       <HolyGrail/>
+    </CodeExample>
+  ))
+
+  .add('List of Cards', () => (
+    <CodeExample title="List of Cards" code={ListOfCardsRaw}>
+      <ListOfCards/>
+    </CodeExample>
+  ))
+
+  .add('Main and Side', () => (
+    <CodeExample title="Main and Side" code={MainAndSideRaw}>
+      <MainAndSide/>
+    </CodeExample>
+  ))
+
+  .add(' Form', () => (
+    <CodeExample title=" Form" code={FormRaw}>
+      <Form/>
     </CodeExample>
   ));

@@ -6,19 +6,19 @@ import styles from '../Example.scss';
 export default () => (
   <div className={styles.exampleContainer}>
     <Layout>
-      <Cell span={4}>{food()}</Cell>
-      <Cell span={4}>{food()}</Cell>
-      <Cell span={4}>{food()}</Cell>
-      <Cell span={4}>{food()}</Cell>
-      <Cell span={4}>{food()}</Cell>
+      <Cell span={4}>{card()}</Cell>
+      <Cell span={4}>{card()}</Cell>
+      <Cell span={4}>{card()}</Cell>
+      <Cell span={4}>{card()}</Cell>
+      <Cell span={4}>{card()}</Cell>
     </Layout>
   </div>
 );
 
-function food() {
+function card() {
   return (
     <Card>
-      <Card.Header withoutDivider title="Food Cell"/>
+      <Card.Header title="Card"/>
       <Card.Content>
         <div style={{height: '150px'}}/>
       </Card.Content>

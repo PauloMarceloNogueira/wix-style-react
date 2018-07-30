@@ -10,15 +10,17 @@ export default () => (
   <div className={styles.exampleContainer}>
     <Layout>
       <Cell span={8}>
-        <Section title="Streched Card" stretch/>
+        <Section title="Main Content" height="450px"/>
       </Cell>
+
       <Cell span={4}>
         <Layout>
-          <Cell span={12}>
-            <Section title="Some Panel" height="200px"/>
+          <Cell>
+            <Section title="Sidebar card" height="200px"/>
           </Cell>
-          <Cell span={12}>
-            <Section title="Some Panel" height="300px"/>
+
+          <Cell>
+            <Section title="Sidebar card 2" height="300px"/>
           </Cell>
         </Layout>
       </Cell>
@@ -26,13 +28,10 @@ export default () => (
   </div>
 );
 
-function Section({title, height, stretch}) {
+function Section({title, height}) {
   return (
-    <Card stretchVertically={stretch}>
-      <Card.Header
-        withoutDivider
-        title={title}
-        />
+    <Card>
+      <Card.Header title={title}/>
       <Card.Content>
         <div style={{height}}/>
       </Card.Content>
@@ -42,6 +41,5 @@ function Section({title, height, stretch}) {
 
 Section.propTypes = {
   title: PropTypes.string,
-  height: PropTypes.string,
-  stretch: PropTypes.bool
+  height: PropTypes.string
 };
