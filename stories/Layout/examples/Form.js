@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import {Layout, Cell} from 'wix-style-react/Layout';
 import Card from 'wix-style-react/Card';
