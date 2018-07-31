@@ -56,8 +56,8 @@ const childrenExample = [
 ];
 
 export default {
-  category: 'Components',
-  storyName: 'Layout',
+  category: 'Components/Layout',
+  storyName: 'Usage',
   component: Layout,
   componentPath: '../../src/Layout/Layout',
   exampleImport: `import { Layout, Cell } from 'wix-style-react/Layout';`,
