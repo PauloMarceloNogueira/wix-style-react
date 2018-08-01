@@ -135,6 +135,9 @@ export const tooltipTestkitFactory = protractorTestkitFactoryCreator(tooltipDriv
 import formFieldDriverFactory from '../src/FormField/FormField.protractor.driver';
 export const formFieldTestkitFactory = protractorTestkitFactoryCreator(formFieldDriverFactory);
 
+import emptyStateDriverFactory from '../src/EmptyState/EmptyState.protractor.driver';
+export const emptyStateTestkitFactory = protractorTestkitFactoryCreator(emptyStateDriverFactory);
+
 import messageBoxFunctionalLayoutDriverFactory from '../src/MessageBox/MessageBoxFunctionalLayout.protractor.driver';
 export const messageBoxFunctionalLayoutTestkitFactory = protractorTestkitFactoryCreator(messageBoxFunctionalLayoutDriverFactory);
 
