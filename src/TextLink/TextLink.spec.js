@@ -1,10 +1,10 @@
 import React from 'react';
 import textLinkDriverFactory from './TextLink.driver';
 import TextLink from './TextLink';
-import {createDriverFactory} from '../../test-common';
-import {textLinkTestkitFactory} from '../../../testkit';
-import {textLinkTestkitFactory as enzymeTextLinkTestkitFactory} from '../../../testkit/enzyme';
-import {isTestkitExists, isEnzymeTestkitExists} from '../../../testkit/test-common';
+import {createDriverFactory} from '../test-common';
+import {textLinkTestkitFactory} from '../../testkit';
+import {textLinkTestkitFactory as enzymeTextLinkTestkitFactory} from '../../testkit/enzyme';
+import {isTestkitExists, isEnzymeTestkitExists} from '../../testkit/test-common';
 import {spy} from 'sinon';
 import {mount} from 'enzyme';
 
