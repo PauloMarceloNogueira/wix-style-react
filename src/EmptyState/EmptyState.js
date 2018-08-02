@@ -15,10 +15,20 @@ const themes = {
 
 class EmptyState extends WixComponent {
   static propTypes = {
+
+    /** Theme of the EmptyState (can be one `page`, `page-no-border` and `section`) */
     theme: PropTypes.oneOf(Object.values(themes)),
-    title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
-    subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+
+    /** Content for the title of the Empty State */
+    title: PropTypes.string.isRequired,
+
+    /** Content for the subtitle of the Empty State */
+    subtitle: PropTypes.string.isRequired,
+
+    /** The Empty State image, can be either a string representing the image URL, or a node to render instead */
     image: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+
+    /** Children to render below the subtitle, ideally an action of some type (Button or TextLink for instance) */
     children: PropTypes.node
   };
 
@@ -27,14 +37,6 @@ class EmptyState extends WixComponent {
     image: null,
     children: null
   };
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-
-    };
-  }
 
   render() {
     const {
@@ -46,9 +48,6 @@ class EmptyState extends WixComponent {
     } = this.props;
 
     const themeClassName = Object.keys(themes).find(t => themes[t] === theme);
-
-    const titleNode = typeof title === 'string' ? title : React.cloneElement(title);
-    const subtitleNode = typeof subtitle === 'string' ? subtitle : React.cloneElement(subtitle);
 
     return (
       <div
@@ -68,14 +67,14 @@ class EmptyState extends WixComponent {
 
           <div className={styles.titleContainer} data-hook="empty-state-title-container">
             {theme === 'section' ? (
-              <Text size="medium" bold>{titleNode}</Text>
+              <Text size="medium" bold>{title}</Text>
             ) : (
-              <Heading appearance="H2">{titleNode}</Heading>
+              <Heading appearance="H2">{title}</Heading>
             )}
           </div>
 
           <div className={styles.subtitleContainer} data-hook="empty-state-subtitle-container">
-            <Text secondary>{subtitleNode}</Text>
+            <Text secondary>{subtitle}</Text>
           </div>
 
           {children && (

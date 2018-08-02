@@ -1,3 +1,3 @@
 # `<EmptyState/>` component
 
-Description goes here.
+> Representing a state of an empty page, section, table, etc.

@@ -27,18 +27,6 @@ describe('EmptyState', () => {
     expect(driver.getSubtitleText()).toEqual('My awesome subtitle');
   });
 
-  it('should support title and subtitle passed as nodes', () => {
-    const driver = createDriver(
-      <EmptyState
-        title={<span>I am a node title</span>}
-        subtitle={<span>I am a node subtitle</span>}
-        />
-    );
-
-    expect(driver.getTitleText()).toContain('I am a node title');
-    expect(driver.getSubtitleText()).toContain('I am a node subtitle');
-  });
-
   it('should have an image', () => {
     const driver = createDriver(
       <EmptyState
