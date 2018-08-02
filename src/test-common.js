@@ -16,7 +16,8 @@ export {
 
 export {enzymeTestkitFactoryCreator} from 'wix-ui-test-utils/enzyme';
 export {testkitFactoryCreator} from 'wix-ui-test-utils/vanilla';
-export {puppeteerTestkitFactoryCreator} from 'wix-ui-test-utils/puppeteer';
+
+export {findByHook, resolveIn} from './test-common-vanilla';
 
 /**
  * Symbol for accessing driver methods which are internal
@@ -58,12 +59,3 @@ export function flattenInternalDriver(driver) {
     return driver;
   }
 }
-
-export const resolveIn = timeout =>
-  new Promise(resolve => {
-    setTimeout(() => {
-      resolve({});
-    }, timeout);
-  });
-
-export const findByHook = (element, hook) => element.querySelector(`[data-hook*="${hook}"]`);
