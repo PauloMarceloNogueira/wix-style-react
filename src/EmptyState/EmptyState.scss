@@ -1,5 +1,48 @@
+@import "../common.scss";
+
 .wrapper {
-  display: block;
   text-align: center;
-  font-size: 22px;
+  padding: 42px;
+}
+
+.wrapper.page {
+  border-radius: 8px;
+  border: solid 1px $D60;
+}
+
+.wrapper.section {
+  padding: 0;
+  border: 0;
+}
+
+.wrapper.pageNoBorder {
+  border: 0;
+}
+
+.wrapper .container {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.wrapper .container .imageContainer {
+  margin-bottom: 36px;
+  min-height: 120px;
+  max-height: 150px;
+}
+
+.wrapper .container .imageContainer > img {
+  min-height: 120px;
+  max-height: 150px;
+}
+
+.wrapper .container .imageContainer > * {
+  margin: 0 auto;
+}
+
+.wrapper .container .titleContainer {
+  margin-bottom: 6px;
+}
+
+.wrapper .container .childrenContainer {
+  margin-top: 18px;
 }

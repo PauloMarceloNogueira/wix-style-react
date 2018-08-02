@@ -4,8 +4,7 @@ import {emptyStateTestkitFactory} from '../../testkit/protractor';
 import {createStoryUrl, waitForVisibilityOf, scrollToElement} from '../../test/utils/protractor';
 import {storySettings} from '../../stories/EmptyState/storySettings';
 
-// eslint-disable-next-line
-fdescribe('EmptyState', () => {
+describe('EmptyState', () => {
 
   const storyUrl = createStoryUrl({kind: storySettings.kind, story: storySettings.storyName, withExamples: true});
 
