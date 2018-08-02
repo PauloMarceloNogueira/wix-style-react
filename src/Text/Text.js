@@ -20,17 +20,7 @@ export const SKINS = {
 export const WEIGHTS = {
   thin: 'thin',
   normal: 'normal',
-  bold: 'bold',
-  'x-bold': 'x-bold'
-};
-
-const isLegalTypography = ({size, weight}) => {
-  switch (size) {
-    case SIZES.tiny: return weight !== WEIGHTS.thin;
-    case SIZES.small:
-    case SIZES.medium: return weight !== WEIGHTS['x-bold'];
-    default: return true;
-  }
+  bold: 'bold'
 };
 
 const Text = ({size, secondary, skin, light, bold, weight, tagName, children, ...rest}) => {
@@ -38,10 +28,6 @@ const Text = ({size, secondary, skin, light, bold, weight, tagName, children, ..
     deprecationLog('Text prop "bold" is deprecated, use "weight" prop instead');
   } else {
     bold = false;
-  }
-
-  if (!isLegalTypography({size, weight})) {
-    console.warn(`Text: props weight=${weight} and size=${size} is not compatible with the design system. Please make sure with your UX that this is what you really want`);
   }
 
   return (
