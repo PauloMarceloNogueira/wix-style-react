@@ -1,8 +1,10 @@
 /* eslint-disable react/jsx-key, react/prop-types */
 import React from 'react';
-import styles from './styles.scss';
 
 import {Layout, Cell} from 'wix-style-react/Layout';
+
+import styles from './styles.scss';
+import storySettings from './story-settings';
 
 const GreyBox = ({children, height}) =>
   <div
@@ -56,7 +58,7 @@ const childrenExample = [
 ];
 
 export default {
-  category: 'Components/Layout',
+  category: storySettings.category,
   storyName: 'Usage',
   component: Layout,
   componentPath: '../../src/Layout/Layout',
