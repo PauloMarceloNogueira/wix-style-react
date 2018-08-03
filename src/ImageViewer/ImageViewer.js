@@ -49,13 +49,13 @@ class ImageViewer extends WixComponent {
           </div>
           <div className={style.imageBackground}>
             <div className={style.buttons}>
-              <Tooltip dataHook="update-image-tooltip" {...TOOLTIP_COMMON_PROPS} {...tooltipUpdateProps}>
-                <Button dataHook="update-image" onClick={onUpdateImage} theme="icon-whitesecondary">
+              <Tooltip dataHook="update-image" {...TOOLTIP_COMMON_PROPS} {...tooltipUpdateProps}>
+                <Button onClick={onUpdateImage} theme="icon-whitesecondary">
                   <Replace size="1.5em"/>
                 </Button >
               </Tooltip>
-              <Tooltip dataHook="remove-image-tooltip" {...TOOLTIP_COMMON_PROPS} {...tooltipRemoveProps}>
-                <Button dataHook="remove-image" theme="icon-whitesecondary" onClick={onRemoveImage}>
+              <Tooltip dataHook="remove-image" {...TOOLTIP_COMMON_PROPS} {...tooltipRemoveProps}>
+                <Button theme="icon-whitesecondary" onClick={onRemoveImage}>
                   <Delete size="1.5em"/>
                 </Button>
               </Tooltip>

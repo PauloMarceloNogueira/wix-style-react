@@ -51,7 +51,7 @@ const tooltipDriverFactory = ({element, wrapper}) => {
       return arrowDirectionToPlacement[arrowDirection];
     },
     getContent,
-    hoverAndGetContent: ({timeout = 1000, interval = 50}) => {
+    hoverAndGetContent: ({timeout = 1000, interval = 50} = {}) => {
       mouseEnter();
       return eventually(() => {
         if (!isShown()) {

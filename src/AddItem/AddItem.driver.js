@@ -2,7 +2,6 @@ import ReactTestUtils from 'react-dom/test-utils';
 import tooltipDriverFactory from '../Tooltip/Tooltip.driver';
 
 const addItemDriverFactory = ({wrapper, element}) => {
-
   const ratioRegex = /ratio\d+x\d+/;
   const byHook = dataHook => element.querySelector(`[data-hook="${dataHook}"]`);
   const addButton = () => byHook('add-container');
@@ -29,7 +28,7 @@ const addItemDriverFactory = ({wrapper, element}) => {
     click: () => ReactTestUtils.Simulate.click(addButton()),
     /** get the Tooltip's driver */
     getTooltipDriver,
-    getTooltipContent: getTooltipDriver().hoverAndGetContent(),
+    getTooltipContent: () => getTooltipDriver().hoverAndGetContent(),
     exists: () => !!element
   };
 };
