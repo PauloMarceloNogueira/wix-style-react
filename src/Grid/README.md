@@ -51,7 +51,12 @@ export default () =>
 
   Use as wrapper for main content. Only `<Row/>`s should be its children.
 
-  It has `minWidth: 894px` and `maxWidth: 1254px`.
+  By default it has `minWidth: 894px` and `maxWidth: 1254px`. Add `fluid` prop to remove those widths.
+
+  | propName | propType | defaultValue | isRequired | description                                           |
+  | ---      | ---      | ---          | ---        | ---                                                   |
+  | children | node     | -            | -          | Should only be `<Row/>`s although any node is allowed |
+  | fluid    | bool     | -            | -          | disable min/max width, use for smaller grids          |
 </details>
 
 
