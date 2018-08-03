@@ -7,6 +7,7 @@ const addItemDriverFactory = ({wrapper, element}) => {
   const byHook = dataHook => element.querySelector(`[data-hook="${dataHook}"]`);
   const addButton = () => byHook('add-container');
   const addTooltip = () => byHook('add-tooltip');
+  const getTooltipDriver = () => tooltipDriverFactory({wrapper, element: addTooltip()});
 
   return {
     /** return the driver element */
@@ -27,7 +28,8 @@ const addItemDriverFactory = ({wrapper, element}) => {
     /** click the add button */
     click: () => ReactTestUtils.Simulate.click(addButton()),
     /** get the Tooltip's driver */
-    getTooltipDriver: () => tooltipDriverFactory({wrapper, element: addTooltip()}),
+    getTooltipDriver,
+    getTooltipContent: getTooltipDriver().hoverAndGetContent(),
     exists: () => !!element
   };
 };

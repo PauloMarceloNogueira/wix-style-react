@@ -10,10 +10,16 @@ import FormFieldError from 'wix-ui-icons-common/system/FormFieldError';
 import classNames from 'classnames';
 import AddItem from '../AddItem/AddItem';
 
+const TOOLTIP_COMMON_PROPS = {
+  showDelay: 0,
+  hideDelay: 0,
+  align: 'center',
+  placement: 'top',
+  theme: 'dark'
+};
+
 class ImageViewer extends WixComponent {
-
   render() {
-
     const {
       imageUrl,
       onAddImage,
@@ -21,21 +27,20 @@ class ImageViewer extends WixComponent {
       onRemoveImage,
       width,
       height,
-      error
+      error,
+      errorMessage,
+      tooltipPlacement,
+      tooltipAddProps,
+      tooltipUpdateProps,
+      tooltipRemoveProps,
+      tooltipErrorProps
     } = this.props;
-
-    const tooltipCommonProps = {
-      showDelay: 0,
-      hideDelay: 0,
-      align: 'center',
-      placement: 'top',
-      theme: 'dark'
-    };
     const classes = classNames(style.container, {[style.hasLogo]: imageUrl, [style.hasError]: error});
+
     return (
       <div className={classes} style={{width, height}} data-hook="image-container">
         {!imageUrl &&
-        <AddItem data-hook="add-image" tooltipContent="Add Image" height={height} onClick={onAddImage}/>
+        <AddItem data-hook="add-image" height={height} onClick={onAddImage} tooltipProps={tooltipAddProps}/>
         }
         {!!imageUrl &&
         <div className={style.changeLogoContainer}>
@@ -44,12 +49,12 @@ class ImageViewer extends WixComponent {
           </div>
           <div className={style.imageBackground}>
             <div className={style.buttons}>
-              <Tooltip content="Replace" {...tooltipCommonProps}>
+              <Tooltip dataHook="update-image-tooltip" {...TOOLTIP_COMMON_PROPS} {...tooltipUpdateProps}>
                 <Button dataHook="update-image" onClick={onUpdateImage} theme="icon-whitesecondary">
                   <Replace size="1.5em"/>
                 </Button >
               </Tooltip>
-              <Tooltip content="Remove" {...tooltipCommonProps}>
+              <Tooltip dataHook="remove-image-tooltip" {...TOOLTIP_COMMON_PROPS} {...tooltipRemoveProps}>
                 <Button dataHook="remove-image" theme="icon-whitesecondary" onClick={onRemoveImage}>
                   <Delete size="1.5em"/>
                 </Button>
@@ -61,10 +66,11 @@ class ImageViewer extends WixComponent {
         {!!error &&
         <Tooltip
           dataHook="error-tooltip"
-          disabled={!this.props.errorMessage}
-          placement={this.props.tooltipPlacement}
-          content={this.props.errorMessage}
-          {...tooltipCommonProps}
+          disabled={!errorMessage}
+          placement={tooltipPlacement}
+          content={errorMessage}
+          {...TOOLTIP_COMMON_PROPS}
+          {...tooltipErrorProps}
           >
           <div className={style.exclamation}><FormFieldError/></div>
         </Tooltip>}
@@ -74,16 +80,48 @@ class ImageViewer extends WixComponent {
   }
 }
 
+ImageViewer.defaultProps = {
+  tooltipAddProps: {
+    content: 'Add Image'
+  },
+  tooltipUpdateProps: {
+    content: 'Update'
+  },
+  tooltipRemoveProps: {
+    content: 'Remove'
+  }
+};
+
 ImageViewer.propTypes = {
+  /** Image url, blank for not uploaded */
   imageUrl: PropTypes.string,
+  /** Show error icon */
   error: PropTypes.bool,
+  /** Error tooltip message */
   errorMessage: PropTypes.string,
+  /** Error tooltip props */
+  tooltipErrorProps: PropTypes.string,
+  /** Error tooltip placement
+   * @deprecated
+   * @see tooltipErrorProps
+   */
   tooltipPlacement: PropTypes.string,
+  /** Add icon tooltip props */
+  tooltipAddProps: PropTypes.string,
+  /** Update icon tooltip props */
+  tooltipUpdateProps: PropTypes.string,
+  /** Remove icon tooltip props */
+  tooltipRemoveProps: PropTypes.string,
+  /** Add image click handler */
   onAddImage: PropTypes.func,
+  /** Update image click handler */
   onUpdateImage: PropTypes.func,
+  /** Remove image click handler */
   onRemoveImage: PropTypes.func,
-  width: PropTypes.number,
-  height: PropTypes.number
+  /** Element width */
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /** Element height */
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 };
 
 export default ImageViewer;

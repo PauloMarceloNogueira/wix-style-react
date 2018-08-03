@@ -6,7 +6,7 @@ import AddMedia from 'wix-ui-icons-common/system/AddMedia';
 import WixComponent from '../BaseComponents/WixComponent';
 import classNames from 'classnames';
 
-const tooltipCommonProps = {
+const TOOLTIP_COMMON_PROPS = {
   showDelay: 0,
   theme: 'dark',
   hideDelay: 0,
@@ -14,7 +14,7 @@ const tooltipCommonProps = {
   placement: 'top'
 };
 
-const ratioClasses = {
+const RATIO_CLASSES = {
   '16/9': style.ratio16x9,
   '3/4': style.ratio3x4,
   '4/3': style.ratio4x3,
@@ -33,15 +33,16 @@ class AddItem extends WixComponent {
       onClick,
       height,
       tooltipContent,
+      tooltipProps,
       aspectRatio
     } = this.props;
-    const ratio = !height && ratioClasses[aspectRatio];
+    const ratio = !height && RATIO_CLASSES[aspectRatio];
     return (
       <div className={classNames(ratio, style.box)} style={{height}} >
         <div className={style.container} onClick={onClick} data-hook="add-container">
           {
-            tooltipContent ?
-              <Tooltip content={tooltipContent} dataHook="add-tooltip" {...tooltipCommonProps}>
+            tooltipProps || tooltipContent ?
+              <Tooltip dataHook="add-tooltip" content={tooltipContent} {...TOOLTIP_COMMON_PROPS} {...tooltipProps}>
                 {renderInnerAddItem()}
               </Tooltip> :
               renderInnerAddItem()
@@ -53,13 +54,18 @@ class AddItem extends WixComponent {
 }
 
 AddItem.propTypes = {
-  /** Funciton called upon click */
+  /** Function called upon click */
   onClick: PropTypes.func,
-  /** The elemnt's asspect ratio   */
-  aspectRatio: PropTypes.oneOf(Object.keys(ratioClasses)),
+  /** The element's aspect ratio */
+  aspectRatio: PropTypes.oneOf(Object.keys(RATIO_CLASSES)),
   /** Element's height - overrides the asspect ratio */
   height: PropTypes.number,
-  /** Content of the tooltip */
+  /** Tooltip props, leave undefined for no tooltip */
+  tooltipProps: PropTypes.shape(Tooltip.propTypes),
+  /** Content of the tooltip
+   * @deprecated
+   * @see tooltipProps
+   */
   tooltipContent: PropTypes.string
 };
 
