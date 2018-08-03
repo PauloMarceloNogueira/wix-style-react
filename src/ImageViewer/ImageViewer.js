@@ -100,18 +100,18 @@ ImageViewer.propTypes = {
   /** Error tooltip message */
   errorMessage: PropTypes.string,
   /** Error tooltip props */
-  tooltipErrorProps: PropTypes.string,
+  tooltipErrorProps: PropTypes.object,
   /** Error tooltip placement
    * @deprecated
    * @see tooltipErrorProps
    */
   tooltipPlacement: PropTypes.string,
   /** Add icon tooltip props */
-  tooltipAddProps: PropTypes.string,
+  tooltipAddProps: PropTypes.object,
   /** Update icon tooltip props */
-  tooltipUpdateProps: PropTypes.string,
+  tooltipUpdateProps: PropTypes.object,
   /** Remove icon tooltip props */
-  tooltipRemoveProps: PropTypes.string,
+  tooltipRemoveProps: PropTypes.object,
   /** Add image click handler */
   onAddImage: PropTypes.func,
   /** Update image click handler */

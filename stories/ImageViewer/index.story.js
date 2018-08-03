@@ -29,7 +29,11 @@ export default {
     imageUrl: exampleImageUrl,
     onAddImage: () => 'onAddImage',
     onUpdateImage: () => 'onUpdateImage',
-    onRemoveImage: () => 'onRemoveImage'
+    onRemoveImage: () => 'onRemoveImage',
+    tooltipErrorProps: [{label: 'error tooltip', value: {placement: 'left'}}],
+    tooltipAddProps: [{label: 'add tooltip', value: {content: 'Add Image'}}],
+    tooltipUpdateProps: [{label: 'update tooltip', value: {content: 'Update'}}],
+    tooltipRemoveProps: [{label: 'remove tooltip', value: {content: 'Delete'}}]
   },
 
   examples: (
